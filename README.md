@@ -1,4 +1,4 @@
-# Стартовйы шаблон Gulp4 (SCSS, PUG)
+# Стартовый шаблон Gulp4 (SCSS, PUG)
 ### Установка
 1. Скопируйте и выполните данную команду в папке с вашим будущим сайтом:  
 `git clone https://github.com/ptrv-dev/gulp4-start.git ./ && rd /S /Q .git & del README.md`
