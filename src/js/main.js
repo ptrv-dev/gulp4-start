@@ -1,0 +1,1 @@
+console.log('./js/main.min.js - is work');

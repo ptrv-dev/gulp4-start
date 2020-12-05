@@ -1,0 +1,17 @@
+block vars
+	- title = "Main page title";
+	- desc = "Main page description";
+	- keywords = "Main page keywords";
+	- author = "noname";
+<!DOCTYPE html>
+html(lang=lang)
+	head
+		include ../modules/_head
+	body
+		include ../modules/header
+		
+		block content
+
+		include ../modules/footer
+		block script
+			script(src="./js/main.min.js")
