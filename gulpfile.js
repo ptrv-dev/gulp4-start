@@ -10,6 +10,7 @@ const del = require('del');
 const uglify = require('gulp-uglify');
 const pug = require('gulp-pug');
 const img = require('gulp-image');
+const ghPages = require('gulp-gh-pages');
 
 function distDel() {
 	return del('./dist/');
@@ -76,5 +77,11 @@ function startWatch() {
 	watch('./src/img/**/*.{jpeg,jpg,png,svg,gif,ico}', image);
 }
 
+function ghDeploy() {
+	return src('./dist/**/*')
+		.pipe(ghPages())
+}
+
 exports.default = series(html, style, script, libs, fonts, parallel(browserSync, startWatch));
 exports.build = series(distDel, html, style, script, libs, fonts, image);
+exports.deploy = series(series(distDel, html, style, script, libs, fonts, image), ghDeploy);
