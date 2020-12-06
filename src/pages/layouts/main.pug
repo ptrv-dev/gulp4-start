@@ -8,8 +8,12 @@ html(lang=lang)
 	head
 		include ../modules/_head
 	body
+
+		svg(style="display: none;")
+			block svg
+
 		include ../modules/header
-		
+
 		block content
 
 		include ../modules/footer
