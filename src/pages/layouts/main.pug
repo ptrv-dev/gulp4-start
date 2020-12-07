@@ -1,12 +1,23 @@
 block vars
-	- title = "Main page title";
-	- desc = "Main page description";
-	- keywords = "Main page keywords";
-	- author = "noname";
+	-var title = "Change the title!"
 <!DOCTYPE html>
-html(lang=lang)
+html(lang="en")
 	head
-		include ../modules/_head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title #{title}
+		meta(name="description", content=desc)
+		meta(name="keywords", content=key)
+		meta(name="author", content=author)
+		link(rel="shortcut icon" href="./img/favicon/favicon.ico" type="image/x-icon")
+		link(rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png")
+		link(rel="stylesheet" href="./libs/reset.min.css")
+		link(rel="stylesheet" href="./css/style.min.css")
+		link(rel="stylesheet", href="./libs/slick/slick.min.css")
+		link(rel="stylesheet", href="./libs/fontawesome/css/all.min.css")
+		block head
 	body
 
 		svg(style="display: none;")
@@ -17,5 +28,8 @@ html(lang=lang)
 		block content
 
 		include ../modules/footer
+
+		script(src="./libs/jquery-3.5.1.min.js")
+		script(src="./libs/slick/slick.min.js")
+		script(src="./js/main.min.js")
 		block script
-			script(src="./js/main.min.js")
